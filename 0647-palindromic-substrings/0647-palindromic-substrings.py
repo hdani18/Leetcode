@@ -1,22 +1,23 @@
-class Solution:
-    def countSubstrings(self, s: str) -> int:
-        def is_palindrome(s,i,j):
-            while i<j:
-                if s[i] == s[j]:
-                    i+=1
-                    j-=1
-                else:
-                    return False
-            return True
-        count = 0
+class Solution(object):
+    def countSubstrings(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        count =0
+
         for i in range(len(s)):
-            count += 1
-            for j in range(i+1,len(s)):
-                if is_palindrome(s,i,j) == True:
-                    count +=1
+            l, r = i,i
+            while l>=0 and r<len(s) and s[l] == s[r]:
+                count +=1
+                l -=1
+                r+=1
+            l, r = i,i+1
+            while l>=0 and r<len(s) and s[l] == s[r]:
+                count +=1
+                l -=1
+                r+=1
         return count
-
-
-            
+        
 
         
