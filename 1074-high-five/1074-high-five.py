@@ -10,11 +10,9 @@ class Solution(object):
                 dic[i].append(j)
             else:
                 dic[i] = [j]
-        print(dic)
         ans = []
         for key, value in dic.items():
             value.sort(reverse=True)
-            print(value)
             avg = int(round(sum(value[:5])/min(len(value),5)))
             ans.append([key,avg])
         return ans
