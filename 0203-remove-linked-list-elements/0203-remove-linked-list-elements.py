@@ -11,16 +11,16 @@ class Solution(object):
         :rtype: ListNode
         """
         dummy = ListNode(next= head)
-        prev,crr = dummy,head
+        prev = dummy
 
-        while crr:
-            temp = crr.next
-            if crr.val == val:
+        while head:
+            temp = head.next
+            if head.val == val:
                 prev.next = temp
-                crr= crr.next  
+                head= head.next  
             else:
-                prev = crr
-                crr= crr.next   
+                prev = head
+                head= head.next   
         return dummy.next
         
             
