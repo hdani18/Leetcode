@@ -9,14 +9,19 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        prev, curr = None, head
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
-        return prev
-        
-        
+        dummy = ListNode()
+        temp,ans = head,dummy
+        lst = []
+        while head:
+            lst.append(head.val)
+            head = head.next
+        for i in reversed(lst):
+            dummy.next = ListNode(val =i)
+            dummy = dummy.next
+            
+        return ans.next
 
 
+
+
+        
