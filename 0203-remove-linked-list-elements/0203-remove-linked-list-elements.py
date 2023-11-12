@@ -12,17 +12,15 @@ class Solution(object):
         """
         dummy = ListNode(next= head)
         prev = dummy
-
         while head:
             temp = head.next
             if head.val == val:
-                prev.next = temp
-                head= head.next  
+                prev.next  = temp
+                head = head.next
             else:
                 prev = head
-                head= head.next   
+                head = head.next
         return dummy.next
-        
             
 
         
